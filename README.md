@@ -1,59 +1,14 @@
-# ColorMatrix
+# Color Matrix (Тестовое задание)
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.1.
+Реализация интерактивного поля 10x10 с логикой переключения цветов (зеленый/красный) при клике, включая изменение состояния соседних ячеек.
 
-## Development server
+### Техническая реализация:
+*   **Angular:** Использование Signals для управления состоянием и нового синтаксиса шаблонов (@for).
+*   **Архитектура:** Логика вынесена в GameService, компоненты презентационные.
+*   **Производительность:** ChangeDetectionStrategy.OnPush. Обновление матрицы происходит иммутабельно для корректной работы детекции изменений.
+*   **Логика:** Переключение состояния реализовано через битовые операции (XOR) для упрощения кода.
 
-To start a local development server, run:
-
-```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+### Функционал:
+1.  Инициализация матрицы 10x10 (все ячейки зеленые/0).
+2.  Обработка клика: изменение цвета целевой ячейки и соседних (по вертикали, горизонтали и диагоналям) на противоположный.
+3.  Сброс состояния в начальное (Reset).

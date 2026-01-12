@@ -1,0 +1,9 @@
+@for (row of matrix(); track $index; let x = $index) {
+    <div class="row">
+        @for (cell of row; track $index; let y = $index) {
+            <app-cell [cellState]="cell" [coord]="[x, y]"></app-cell>
+        }
+    </div>
+}
+
+<button (click)="onClickHandler()">RESET</button>
